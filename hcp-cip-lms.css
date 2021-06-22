@@ -1,7 +1,7 @@
 /*Place your CSS code here*/
 
 :root {
-    --all-font-family: 'Lato', serif;
+    --all-font-family: 'Archivo', 'Lato', serif;
     --body-font-color-base: #33475b; 
     --body-bg-color: #f4f5f8;
     --header-bg-color: #33475b;
