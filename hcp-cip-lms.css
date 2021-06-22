@@ -1,0 +1,904 @@
+/*Place your CSS code here*/
+
+:root {
+    --all-font-family: 'Lato', serif;
+    --body-font-color-base: #33475b; 
+    --body-bg-color: #f4f5f8;
+    --header-bg-color: #33475b;
+    --header-text-color: #ffffff;
+    --header-dropdown-bg-color: black;
+    --header-dropdown-bg-color: #ffffff;
+    --header-dropdown-divider-color: #ddd;
+    --header-dropdown-text-color: #33475b;
+    --header-dropdown-text-color-hover: #777;
+
+    --searchbar-bg-color: rgba(255,255,255,0.8);
+    --searchbar-border: 1px solid #ddd;
+    
+    --insert-text-messages: 'Messages';
+    --insert-text-notifications: 'Notifications';     
+
+    --navbar-bg-color: #ffffff;
+    --navbar-border-bottom: 1px solid #e7e7e7;
+    --nav-text-color: #33475b;
+    --nav-text-color-hover: #33475b;  
+    --navbar-expand-text-color: #ffffff !important;
+    --navbar-expand-bg-color: #33475b;
+    
+    --breadcrumb-bg-color: #f4f5f8;
+    --breadcrumb-text-color: #33475b; 
+    --page-instructions-color: #555;
+    
+    --ef-block-bg-color: #ffffff;
+    --ef-block-padding: 0px;
+    --inner-ef-block-padding: 20px;
+    
+    --button-bg-color: #88b11e;
+    --button-bg-color-hover: #96c421; 
+    --button-bg-color-active: #85ae1e;    
+    --button-font-color: #ffffff; 
+    --button-font-color-hover: #ffffff;    
+    --button-font-color-active: #ffffff;  
+    --button-border: 0px solid #88b11e;
+    
+    --button-bg-color-invert: #f4f5f8;
+    --button-bg-color-hover-invert: #eff1f5; 
+    --button-bg-color-active-invert: #e0e3eb;    
+    --button-font-color-invert: #33475b; 
+    --button-border-invert: 1px solid #e0e3eb;
+    --button-padding: 12px 24px;
+    --button-border-radius: 3px; 
+        
+    --tab-slider-underline-color: ;
+    --tab-slider-underline-height: ;
+    
+    --text-link-color: #88b11e;   
+}
+/*
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+*/
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* BASE NORMALIZATION OF STARTING POINT */
+html,body, div.dashboard-panel div.panel-body {
+    background-color: var(--body-bg-color);
+}
+body {   
+    color: var(--body-font-color) !important;
+    padding-bottom: 120px !important;
+}
+div.ef-block {
+    background-color: var(--ef-block-bg-color);
+    padding: var(--ef-block-padding);
+    box-shadow: 0 0 0 1px rgba(63,63,68,0.05), 0 1px 3px 0 rgba(63,63,68,0.15) !important;
+}
+div.ef-block div.ef-block, div.ef-block > div.ef-block-content {
+    padding: var(--inner-ef-block-padding);
+    box-shadow: none !important;
+}
+*.btn.btn-primary, *.btn.btn-primary:not(.active), *.btn.btn-primary:hover, *.btn.btn-primary:hover:not(.active), *.btn.btn-primary:focus, *.btn.btn-primary:focus:not(.active) {
+    background-color: var(--button-bg-color) !important;
+    border: var(--button-border) !important;    
+}  
+/* all text as same font and normalize case */
+html,body, div, span, h1, h2, h3, h4, h5, h6, p, a, label, input, legend, .btn.btn-primary, .btn.btn-default, .btn.btn-success, .btn.btn-info, .btn.btn-warning, .btn.btn-danger, .btn.btn-link {
+    font-family: var(--all-font-family);
+    text-transform: none;
+    color: var(--body-font-color-base);
+}
+/* baseline settings for header */
+#ef-navbar, #ef-navbar li a.dropdown-toggle[aria-expanded="true"] {
+    background-color: var(--header-bg-color);
+}
+#ef-navbar a.dropdown-item, #ef-navbar ul.dropdown-menu, #ef-navbar .container ul.nav.navbar-nav > li.open > a, .user-preferences.open .alphatar-add {
+    background-color: var(--header-dropdown-bg-color) !important;
+    color: var(--header-dropdown-text-color) !important;
+}
+#ef-navbar #nav-gamification-points span {
+    color: var(--header-dropdown-color) !important;    
+}
+#ef-navbar ul.dropdown-menu .divider {
+    background-color: var(--header-dropdown-divider-color) !important;
+}
+#ef-navbar ul.dropdown-menu .content {
+    border-color: var(--header-dropdown-divider-color) !important;
+}
+#ef-navbar a.dropdown-item:hover {
+    color: var(--header-dropdown-text-color-hover) !important;
+}
+#ef-navbar .container ul.nav.navbar-nav > li.user-preferences ul.dropdown-menu:after {
+    border-color: var(--header-dropdown-divider-color) !important;    
+}
+/* searchbar and dropdowns in header */
+#ef-navbar .container ul.nav.navbar-nav li.open a.dropdown-toggle, #ef-navbar .container ul.nav.navbar-nav li a.dropdown-toggle + ul.dropdown-menu {
+    background-color: #fff;
+}
+/* normal header links not clicked */
+#ef-navbar .container ul.nav.navbar-nav > li > a {
+    color: #fff;
+}
+/* header links tab opened */
+#ef-navbar .container ul.nav.navbar-nav > li.open > a {
+}
+/* remove 1px space under tab */
+#ef-navbar .container ul.nav.navbar-nav li a.dropdown-toggle + ul.dropdown-menu {
+    top: 55px;
+}
+.ef-switch-account span {
+    top: 3px;
+}
+.ef-switch-account span:before {
+    content: '' !important;
+}
+.ef-switch-account:not(.current) span:after {
+    content: '' !important;
+    width: 10px;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    visibility: visible !important;
+}
+.ef-switch-account.current span:after {
+    content: '' !important;
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    visibility: visible !important;
+}
+
+
+/* navbar toggle button on mobile */
+.navbar-toggle {
+    float: left;
+    border: 0px;
+}
+.navbar-toggle:hover, .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: transparent !important;
+}
+.navbar-toggle .icon-bar {
+    background-color: var(--nav-text-color) !important;
+}
+.navbar-toggle:before {
+    content:"Menu";
+    left:30px;
+    top:7px;
+    position:absolute;
+    width:50px;
+}
+.navbar-new.navbar-default .navbar-nav > .open > a, .navbar-new.navbar-default .navbar-nav > .open > a:hover, .navbar-new.navbar-default .navbar-nav > .open > a:focus {    
+    background-color: var(--navbar-expand-bg-color);
+    color: var(--navbar-expand-text-color) !important;
+}
+.navbar-new {
+    z-index: 10;
+}
+html.popup .navbar-new {
+    display: none;
+}
+html.popup div.ef-block {
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+.navbar-new .dropdown.open ul li {
+    min-height: 40px;
+}
+@media (max-width: 1000px) {
+    .navbar-new .navbar-header {
+        float: none;
+    }
+    .navbar-new .navbar-left, .navbar-new .navbar-right {
+        float: none !important;
+    }
+    .navbar-new .navbar-toggle {
+        display: block;
+    }
+    .navbar-new .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-new .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-new .navbar-collapse.collapse {
+        display: none !important;
+        background-color: #ffffff;
+        padding-left: 30px;
+        border-bottom: 1px solid #f4f5f8;
+    }
+    .navbar-new .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+        padding-bottom: 7.5px;
+        box-shadow: 0 4px 2px -2px rgba(0,0,0,0.3);
+    }
+    .navbar-new .navbar-nav>li {
+        float: none;
+    }
+    .navbar-new .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-new .collapse.in {
+        display:block !important;
+        background-color: #ffffff;
+        padding-left: 30px;
+        border-bottom: 1px solid #f4f5f8;
+    }
+    .navbar-new .collapse li a {
+        padding-left: 15px !important;
+    }
+    .navbar-new .collapse li a {
+        color: inherit !important;
+    }    
+    .navbar-new .navbar-nav > li {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    .navbar-new .dropdown.open > a {
+        background-color: var(--header-bg-color) !important;
+        color: #fff !important;
+    }
+    .navbar-new .dropdown.open .dropdown-menu {
+        background-color: #f4f5f8;
+        padding-left: 15px;
+    }
+    .navbar-new.navbar-default .navbar-nav > .open > a, .navbar-new.navbar-default .navbar-nav > .open > a:hover, .navbar-new.navbar-default .navbar-nav > .open > a:focus {
+        color: #fff !important;
+    }
+}
+
+
+
+/* boxes with numbers are hard coded as uppercase, so have to modify */
+.ef-info-header, .ef-table-label {
+    text-transform: lowercase;
+}
+.ef-info-header:first-letter, .ef-table-header:first-letter {
+    text-transform: uppercase;
+}
+/* need to set specific color for tab anchors and box number numerators to override existing  */
+ul.customTabs > li.active > a, .colored-info {
+    color: var(--body-font-color-base);
+}
+/* modify base button, not border radiuis to avoid issues with week month year section */
+.btn {
+    font-size: 14px;
+}
+.btn-primary, .btn.btn-success, .applyBtn, .ef-dashboard-header .ef-main-action-button .btn.btn-success {
+    background-color: var(--button-bg-color) !important;
+    border: var(--button-border) !important;    
+    color: var(--button-font-color) !important;
+//    padding: var(--button-padding);
+    box-shadow: 0 2px 10px -1px rgba(0,0,0,0.3) !important;
+}
+.btn-primary:hover, .applyBtn:hover {
+    background-color: var(--button-bg-color-hover) !important;
+    border: var(--button-border) !important;    
+    color: var(--button-font-color) !important; 
+}
+.btn-primary:active, .applyBtn:active {
+    background-color: var(--button-bg-color-active) !important;
+    border: var(--button-border) !important;    
+    color: var(--button-font-color) !important;    
+}
+.btn-default {
+    background-color: var(--button-bg-color-invert) !important;
+    border: var(--button-border-invert) !important;    
+    color: var(--button-font-color-invert) !important;
+//    padding: var(--button-padding);
+}
+.btn-default:hover {
+    background-color: var(--button-bg-color-hover-invert) !important;
+}
+.btn-default:active {
+    background-color: var(--button-bg-color-active-invert) !important;  
+}
+.btn.dropdown-toggle {
+    border-left: 0.5px solid #f4f5f8 !important;
+    margin-left: 1px !important;
+}
+.btn.dropdown-toggle .caret {
+    color: var(--button-font-color);
+}
+.btn-sm, .btn-group-sm > .btn {
+    line-height: 2em !important;
+}
+/* remove inner box shadow on day week month report labels */
+.btn.active {
+    box-shadow: none;
+    background-color: var(--button-bg-color-active-invert) !important;
+}
+
+/* change underline for active tab in body */
+#sliderNested {
+    height: 3px;
+    background-color: var(--text-link-color);
+}
+#sliderNested:after, x#sliderNested:before {
+	bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+    display: none !important;
+}
+#sliderNested:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-bottom-color: #ffffff;
+	border-width: 10px;
+	margin-left: -10px;
+    top: -18px;
+    display: none !important;
+}
+#sliderNested:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-bottom-color: #e0e3eb;
+	border-width: 10px;
+	margin-left: -10px;
+    display: none !important;
+}
+ul.customTabs > li > a, li.tabulizedElement {
+    padding-bottom: 16px !important;
+}
+ul.customTabs > li.active > a {
+    color: var(--text-link-color);
+}
+ul.customTabs > #slider {
+    background-color: var(--text-link-color);
+    height: 3px;
+}
+ul.tabulizedList > li.tabulizedElement.selected > a:not(:first-child):after, ul.tabulizedList > li.tabulizedElement.selected > a:not(:first-child):before {
+    display: block;
+    top: 18px;
+    height: 3px;
+    background-color: var(--text-link-color);
+    border: none;
+}
+ul.tabulizedList > li.tabulizedElement.selected > a:not(:first-child):after {   
+}
+ul.tabulizedList > li.tabulizedElement.selected > a:not(:first-child):before {   
+}
+ul.tabulizedList > li.tabulizedElement.selected > a {
+    color: var(--text-link-color) !important;
+    font-size: 100%;
+}
+
+/* change borders of blocks and legend underline in main body */
+.ef-block {
+//    box-shadow: none !important;
+}
+legend {
+    border-bottom: none !important;
+}
+
+/* report filters and "with selected" handle */
+#ef-report-filters {
+    margin-top: 10px !important;
+    background-color: #f4f5f8 !important;
+}
+#ef-report-filters .label {
+    background-color: #c1c2c5;
+    color: #555;
+    padding: 6px;
+}
+#ef-with-selected-handle {
+    margin-bottom: 15px;
+    background-color: #f4f5f8;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+/* table edits */
+.table-responsive table  {
+    border: 1px solid #ddd;
+    border-collapse: collapse !important;
+    border-spacing: 1px !important;
+    box-sizing: border-box !important;
+}
+.table-responsive table tr td {
+    border-top: 1px solid #ddd !important;
+}
+.table-responsive table tr td:last-of-type {
+    border-right: 1px solid #ddd !important;
+}
+.table-responsive table tr:last-of-type td {
+    background-color: #ffffff;
+}
+.table-responsive table tr.topTitle, .table-responsive table td.topTitle, .table-responsive table tr:first-of-type {
+    background-color: #f4f5f8;
+}
+.table-responsive table tr.oddRowColor, tr.evenRowColor {
+    background-color: #ffffff !important;
+}
+.table-searchbar {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    text-align: right;
+}
+.sortTablefilter {
+    width: auto;
+    position: relative;
+}
+.sortTablefilter .form-control {
+    width: auto;
+    display: inline-block;
+}
+.sortTablefilter span.btn {
+    top: -3px;
+}
+.sortTablefilter .ef-export-grid {
+    width: 100px;
+    display: inline-block;
+}
+.sortTablefilter .ef-export-grid:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+.sortTablefilter .ef-export-grid:after {
+    content: 'Export';
+    margin-left: 5px;
+    font-family: var(--all-font-family);
+    font-size: 14px;
+}
+.sortedTableFooter .ef-grid-info .can_hide:first-of-type {
+    margin-right: 10px;
+}
+.sortedTableFooter .ef-grid-info .can_hide:nth-of-type(2) {
+    margin-left: 20px;
+}
+.table-responsive td {
+    line-height: 1.4em !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+}
+@media (max-width: 1000px) {
+    .sortTablefilter {
+        text-align: left;
+    }
+    .sortTablefilter .form-control {
+        min-width: 100% !important;
+    }
+    .table-responsive .table-responsive, .table-responsive table {
+        border: 0 !important;
+    }
+    .ef-export-grid {
+        display: none !important;
+    }
+}
+
+
+/* style buttons moved into search row */
+.ef-header-tools {
+    padding-left: 0px !important;
+}
+.ef-header-tools.header-buttons, .ef-report-button-row {
+    text-align: left;
+}
+.ef-header-tools.header-buttons a, .ef-report-button-row a {
+    line-height: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+.ef-report-button-row {
+    padding-top: 0px;
+}
+.ef-report-button-row button {
+    line-height: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+/* hide searchbar when in footer to avoid ajax replacing it, and center pagination */
+.table-responsive .sortedTableFooter .sortTablefilter {
+/*    display: none; */
+}
+.sortedTableFooter {
+    text-align: center;
+}
+.ef-grid-info.pull-right {
+/*    float: none !important; */
+}
+/* edit report summary blocks at top */
+.toolbar {
+    margin-bottom: 20px;
+}
+
+/* breadcrumb styling */
+div.breadcrumb-x {
+    box-shadow: none !important;
+    padding-bottom: 20px;
+    background-color: var(--breadcrumb-bg-color);
+}
+.breadcrumb li.active {
+    display: block;
+}
+.breadcrumb li:before, .breadcrumb > li + li:before {
+    content: "<";
+    padding: 0 5px;
+    color: #ccc;
+}
+.breadcrumb li.active:before {
+    display: none;
+}
+.breadcrumb li.active a {
+    font-size: 32px !important;
+    line-height: 1.2em;
+    font-weight: 500 !important;
+    margin-left: 6px;
+}
+.breadcrumb li:not(.active) a {
+    color: var(--breadcrumb-text-color);
+}
+div.breadcrumb-x ol.breadcrumb li a {
+    max-width: 600px !important;
+    overflow: auto;
+    white-space: wrap !important;
+}
+.breadcrumb.visible-lg {
+    display: block !important;
+}
+.breadcrumb-x .breadcrumb.visible-sm, .breadcrumb-x .breadcrumb.visible-md, .breadcrumb-x .breadcrumb.visible-xs {
+    display: none !important;
+}
+.itk-pagedesc div {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+/* style injected instructions */
+div.page-instructions {
+    color: var(--page-instructions-color);
+    margin-left: 8px;
+}
+
+/* modify user profile form */
+#user_profile_form .ef-form-element {
+    max-width: 100%;
+}
+#user_profile_form .form-group .control-label {
+    text-align: left;
+    margin-bottom: 3px;
+}
+
+.hide-me {
+    display: none !important;
+}
+
+
+/* set text link color */
+.ef-anchor-like, a.link, a.link:visited, a.link:hover, a.link:link {
+    color: var(--text-link-color) !important;
+}
+
+
+/* navbar new */
+.navbar.navbar-new {
+    border: 0px;
+    background-color: var(--navbar-bg-color);
+    border-bottom: var(--navbar-border-bottom);
+    max-height: 50px;
+}
+.navbar-new.navbar-default .navbar-nav > li:first-of-type > a {
+    padding-left: 10px;
+}
+.navbar-new .navbar-collapse {
+    padding-left: 0px;
+}
+.navbar-new li.live:after {
+    content: ' ' !important;
+    height: 3px !important;
+    background-color: var(--nav-text-color) !important;
+    width: calc(100% - 20px) !important;
+    margin-left: 10px;
+    position: absolute;
+    bottom: 2px;
+}
+.navbar.navbar-new a {
+    font-size: 14px;
+    color: var(--nav-text-color) !important;
+}
+.navbar.navbar-new a:hover {
+    color: var(--nav-text-color-hover) !important;
+}
+.navbar.navbar-new li li {
+    height: 3em !important;
+}
+.navbar.navbar-new li li:first-of-type {
+    margin-top: 8px;
+}
+.navbar.navbar-new .glyphicon {
+    margin-right: 5px;
+    font-size: 16px;
+    color: inherit;
+}
+.navbar.navbar-new .fa, .navbar.navbar-new .fas {
+    margin-right: 4px;
+    font-size: 18px;
+    color: inherit;  
+}
+.navbar.navbar-new .glyphicon, .navbar.navbar-new .fa, .navbar.navbar-new .fas {
+    min-width: 25px;
+    text-align: center;
+} 
+.navbar.navbar-new .caret {
+    color: inherit;
+}
+.navbar-new .btn.itk-otg, .navbar-new .btn.itk-support {
+    margin-top: 8px;
+    margin-left: 15px;
+    border: 1px solid;
+    padding: 6px 10px 6px 6px !important;
+}
+.navbar-new .btn.itk-otg:hover, .navbar-new .btn.itk-support:hover {
+    background-color: #f4f5f8;
+}
+
+/* font awesome fix */
+.fa, .fas {
+    color: inherit !important;
+}
+.fa-bell-o, .fa-comments-o, .fa.fa-sign-in, .fa.fa-pencil {
+    font-family: 'FontAwesome' !important;
+}
+.fa-comments-o:after {
+    content: var(--insert-text-messages);
+    padding-left: 5px;
+    font-size: 14px;
+    font-family: var(--all-font-family);
+}
+.fa-bell-o:after {
+    content: var(--insert-text-notifications);
+    padding-left: 5px;
+    font-size: 14px;    
+    font-family: var(--all-font-family);
+}
+span.alphatar-add {
+    color: var(--main-nav-color);
+    font-size: 14px;
+    padding-left: 5px;
+}
+
+/* course overview page edits */
+.ef-courses-list-item.unit-entry:not([data-status="started"]) span a {
+}
+
+/* scorm module on player page */
+.ef-content-area-scorm #ef-scorm-content {
+    padding-bottom: 80%;
+}
+
+/* staring work on actual new table */
+x.ef-default-avatar {
+    max-width: 80px;
+    float: left;
+    margin-right: 15px;
+    border: 1px solid #f4f5f8
+}
+x.table td div {
+     max-width: 100px !important;
+}
+x.table > tbody > tr > td {
+     vertical-align: middle;
+}
+
+.container.itk-insert .row {
+    padding-bottom: 20px !important;
+}
+.table.newcoursetable > thead {
+
+}
+.table.newcoursetable > tbody > tr > td {
+    vertical-align: middle;
+}
+.table.newcoursetable > tbody > tr > td:first-of-type > img {
+    width: 80px;
+    border: 1px solid #f4f5f8;
+    float: left;
+}
+.table.newcoursetable > tbody > tr > td:first-of-type > span a {
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 120%;
+}
+.table.newcoursetable .indent {
+    background-color: #f4f5f8;
+}
+.table.newcoursetable .indent td:first-of-type {
+    padding-left: 55px;
+    position: relative;
+}
+.table.newcoursetable .indent td:first-of-type:before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 45px;
+    background-color: #fff;
+    height: 102%;
+    top: 1px
+}
+.table.newcoursetable .fa-award {
+    font-size: 26px;
+    color: var(--button-bg-color) !important;
+}
+.category-tag.label {
+    margin-left: 15px;
+    background-color: grey;
+    
+}
+.ef-block .tab-content {
+    padding: 10px 20px 20px 20px;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    border: none;
+    border-bottom: 3px solid var(--text-link-color);
+    color: var(--text-link-color);
+}
+.nav-tabs > li > a:hover {
+    background-color: transparent !important;
+    border-color: transparent;
+}
+  
+.collapsing {
+    -webkit-transition: none;
+    transition: none;
+    display: none;
+}
+
+/* My Courses page */
+
+.ef-my-courses .ef-courses-list > ul > li.ef-my-courses-category > div.ef-entry-head {
+    background-color: #f4f5f8;
+    border-top: 1px solid #ddd;
+    margin-top: 50px;
+}
+.ef-my-courses-category.expanded {
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+}
+.ef-my-courses .ef-courses-list ul li.ef-my-courses-curriculum > div.ef-entry-head {
+    background-color: #f4f5f8 !important; 
+    border-top: 1px solid #ddd;
+}
+.ef-my-courses .ef-courses-list ul li.ef-my-courses-curriculum > div.ef-entry-head .ef-entry-title {
+    padding-left: 60px;
+}
+.ef-my-courses .ef-courses-list ul li.ef-my-courses-curriculum > div.ef-entry-head .ef-entry-title .ef-expand-collapse-handle {
+    left: 5px;
+}
+.ef-my-courses .ef-courses-list ul li.ef-my-courses-category ul li.ef-my-courses-category > div.ef-entry-head {
+    background-color: #f4f5f8;
+    border-top: 1px solid #ddd;   
+}
+.ef-my-courses ul li.ef-my-courses-category > ul > li:nth-child(2n+2) {
+    background-color: #ffffff;
+}
+div.ef-entry-head:hover, .ef-my-courses .ef-courses-list ul li.ef-my-courses-curriculum > div.ef-entry-head:hover {
+    background-color: #f4f5f8 !important;
+}
+.ef-my-courses-course .ef-my-courses-progress-bar {
+    
+}
+.ef-my-courses .ef-courses-list div.ef-entry-head span.ef-entry-name {
+    white-space: normal !important;
+}
+.ef-my-courses-course .ef-entry-name .pull-left {
+    float: none !important;
+    margin-left: 130px;
+}
+.ef-entry-name {
+    line-height: 1.2em;
+}
+.itk-course-img {
+    float: left !important;
+    width: 120px;
+}
+.ef-my-courses ul li .ef-my-courses-progress-bar {
+    margin: 3px 0px 8px 0px;
+}
+/* Fix issue of update causing title to display under new image for course for Learner start */
+.ef-my-courses .ef-courses-list div.ef-entry-head span.ef-entry-name {
+    display: inline !important;
+    float: none !important;
+    margin-left: 15px;
+}
+.ef-my-courses ul li.ef-my-courses-category > div.ef-entry-head span.ef-entry-name, .ef-my-courses ul li.ef-my-courses-category > div.ef-entry-head span.ef-entry-name:hover, .ef-my-courses ul li.ef-my-courses-category > div.ef-entry-head span.ef-entry-name a.ef-entry-link {
+    color: var(--body-font-color-base);
+    text-transform: none;
+}
+
+/* Course Catalog */
+.ef-price {
+    display: none;
+}
+
+/* Course view pages */
+div.breadcrumb-x ol.breadcrumb li a {
+    white-space: auto;
+}
+
+/* Profile page */
+#generatePass {
+    display: none;
+}
+x#user-roles .dropdown-menu {
+    margin-left: 0px !important;
+}
+
+.learner-message {
+    padding: 10px;
+    text-align: center;
+    color: #444;
+    background-color: #ddd;
+}
+
+#assignmentsTable td input {
+    min-width: 100px;
+}
+#assignmentsTable td .col-md-6 {
+    width: 100%;
+    display: block;
+}
+
+
+@media (max-width: 550px) {
+    .ef-my-courses .ef-my-courses-course .ef-entry-title {
+        padding-left: 10px !important;
+    }
+    .ef-my-courses .ef-entry-name .ef-entry-link {
+        white-space: wrap !important;
+    }
+    .itk-course-img {
+        width: 80px;
+        float: none !important;
+        display: inline-block;
+    }
+    .ef-my-courses .ef-courses-list .ef-my-courses-course div.ef-entry-head .ef-entry-title span.ef-entry-name {
+        display: block !important;
+        margin-left: 0;
+        margin-top: 5px;
+    }
+    .ef-my-courses .ef-entry-link {
+        min-height: 40px;
+        white-space: initial !important;
+        text-overflow: visible !important;
+    }
+}
+
+.learner-message {
+    text-align: center !important;
+    width: 100% !imporant;
+}
+.navbar-new {
+    margin-bottom: 0px;
+}
+
+#ef-description-full table {
+    max-width: 100% !important;  
+    width: 100% !important;
+}
+
+.ef-my-courses .ef-courses-list div.ef-entry-head .ef-entry-head-heading {
+    height: auto !important;
+}
+
+/* DO NOT ADD/EDIT AFTER THIS LINE */
