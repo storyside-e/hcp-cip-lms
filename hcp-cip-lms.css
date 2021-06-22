@@ -901,4 +901,215 @@ x#user-roles .dropdown-menu {
     height: auto !important;
 }
 
+/* HCP CIP Edits */
+
+html, body {
+    font-family: Archivo;
+    background-color: #fff;
+    color: #0e1f43
+}
+
+.container {
+    max-width: 100%;
+    width: 100%;
+}
+
+/* HCP CIP Top Bar */
+
+.hcp-cip-top-bar { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: #35284b;
+    color: #fff;
+    font-size: 14px;    
+}
+.hcp-cip-top-bar-logo {
+    width: 30px;
+    cursor: pointer;
+}
+.hcp-cip-top-bar-products {
+    display: flex;
+    align-items: center;
+}
+a.hcp-cip-top-bar-product {
+    padding: 20px 40px 20px 58px;
+    margin: 0 5px;
+    font-weight: 500;
+    position: relative;
+    cursor: pointer;
+    color: #fff;
+}
+a.hcp-cip-top-bar-product:hover{
+    text-decoration: none;
+    background-color: #493e5d;
+}
+.hcp-cip-top-bar-product.active {
+    background-color: #493e5d;
+}
+.hcp-cip-top-bar-product:before {
+    content: '';
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    left: 28px;
+    top: 49%;
+    transform: translatey(-50%);
+}
+
+.hcp-cip-top-bar-product.hcp-cip-experience:before {
+    background: url(https://www.sageway.com/wp-content/uploads/2021/06/XM-Mark.png);    
+    background-size: contain;
+}
+.hcp-cip-top-bar-product.hcp-cip-training:before {
+    background: url(https://www.sageway.com/wp-content/uploads/2021/06/Training-Mark.png);    
+    background-size: contain;   
+}
+.hcp-cip-top-bar-product.hcp-cip-reviews:before {
+    background: url(https://www.sageway.com/wp-content/uploads/2021/06/RM-Mark.png);    
+    background-size: contain;    
+}
+.hcp-cip-top-bar-product.hcp-cip-benchmarking:before {
+    background: url(https://www.sageway.com/wp-content/uploads/2021/06/Benchmarking-Mark.png);    
+    background-size: contain;    
+}
+.hcp-cip-top-bar-account {
+    cursor: pointer;
+}
+.hcp-cip-top-bar-account img {
+    max-width: 38px;
+    border-radius: 50%;
+    border: 1px solid #f4f5f8;
+}
+
+/* End HCP CIP Top Bar */
+
+/* xx */
+.sidebar {
+    background-color: #fff;
+    padding: 0;
+}
+.sidebar-sticky {
+    padding: 20px 15px;
+}
+.sidebar-logo {
+    height: 57px;
+    line-height: 57px;
+    width: 100%;
+    display: block;
+    vertical-align: center;
+    text-align: center;
+    background-color: #d07059;
+    color: #fff;
+    font-size: 16px;
+}
+.hcp-cip-main {
+    padding: 0;
+    background-color: #f4f5f8;
+}
+#main-content {
+    padding: 0 25px 75px 25px;
+}
+.navbar-header {
+    display: none !important;
+}
+#ef-navbar, #ef-navbar li a.dropdown-toggle[aria-expanded="true"] {
+    background-color: #dddddd;
+    border-color: #dddddd;
+}
+#ef-navbar .container ul.nav.navbar-nav > li > a, #ef-navbar .container ul.nav.navbar-nav > li > button {
+    color: #0e1f43;
+}
+#ef-navbar form.navbar-form #searchDiv {
+    background-color: #ccc;
+    border-radius: 4px;
+    max-width: 250px;
+}
+.navbar-form {
+    text-align: right;
+}
+.breadcrumb-x {
+    background-color: transparent !important;
+    min-height: 50px;
+    vertical-align: middle;
+    margin: 0px 0px 15px 0px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.breadcrumb-x ol.ef-breadcrumb {
+    padding: 25px 25px 15px 25px;
+}
+.breadcrumb-x .ef-breadcrumb li.active a {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.nav .nav-item .nav-link {
+    padding: 6px 15px 6px 25px;
+    font-weight: 600;
+    margin-top: 18px;
+    position: relative;
+    border-radius: 4px;
+    color: #0e1f43
+}
+.nav .nav-item .nav-link.active {
+    background-color: #fae1db;
+    color: #d07059;
+}
+.nav .nav-item .sub-link {
+    margin-top: 0px;
+    font-weight: 500;
+    padding-left: 30px;
+}
+.nav-link-home:before {
+    content: '\f015';
+    position: absolute;
+    left: 7px;
+    font-family: FontAwesome;
+}
+.nav-link-users:before {
+    content: '\f007';
+    position: absolute;
+    left: 7px;
+    font-family: FontAwesome;    
+}
+
+
+
+.ef-block {
+    border-radius: 5px !important;
+}
+.ef-block .ef-block {
+    border-radius: 0;
+}
+.ef-block .ef-header-tools {
+    
+}
+.ef-block .table-responsive {
+    padding: 0 20px 20px 20px;
+}
+.ef-block .table-responsive .table-responsive {
+    padding: 0;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+.ef-block .table-responsive .table-responsive tr:first-of-type {
+    border-bottom: 1px solid black;
+}
+.sortedTableFooter {
+    padding: 10px 0 15px 0;
+}
+
+.btn.btn-primary, .btn.btn-primary:not(.active), .btn.btn-primary:hover, .btn.btn-primary:hover:not(.active), .btn.btn-primary:focus, .btn.btn-primary:focus:not(.active) {
+    background-color: #d07059;
+    border-color: #d07059;
+    text-transform: none;
+}
+
+
+
 /* DO NOT ADD/EDIT AFTER THIS LINE */

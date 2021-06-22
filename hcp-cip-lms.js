@@ -723,3 +723,54 @@ function createnav(thisusertype, thisuserid) {
      icon_eye_to_cert();
     }
   });
+
+
+
+
+
+
+  
+  // HCP CIP Edits
+
+  WebFontConfig = {
+    google: {
+        families: ['Archivo:300,400,700']
+    }
+};
+
+(function(d) {
+    var wf = d.createElement('script'), s = d.scripts[0];
+    wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+    wf.async = true;
+    s.parentNode.insertBefore(wf, s);
+})(document);
+
+$('body').wrapInner('<div class="all-efront-content"></div>');
+
+var topBarHtml = '<div class="hcp-cip-top-bar"><div class="hcp-cip-top-bar-logo"><a href="/"><img src="https://www.sageway.com/wp-content/uploads/2021/06/HCP_mark_secondary.svg" alt="HCP"></a></div><div class="hcp-cip-top-bar-products"><a href="/" class="hcp-cip-top-bar-product hcp-cip-experience">Experience</a><a href="/" class="hcp-cip-top-bar-product hcp-cip-training">Training</a><a href="/" class="hcp-cip-top-bar-product hcp-cip-reviews">Reviews</a><a href="/" class="hcp-cip-top-bar-product hcp-cip-benchmarking">Benchmarking</a></div><div class="hcp-cip-top-bar-account"><img src="https://www.sageway.com/wp-content/uploads/2021/06/kire-headshot.png" alt="User"></div></div>'
+
+$(document).ready(function() {
+    $('body').prepend(topBarHtml);
+});
+
+var bodyWrapperHtml = '<div class="row"> <nav class="col-md-2 sidebar"> <div class="sidebar-logo"><b>HCP</b> Training</div><div class="sidebar-sticky"><ul class="nav flex-column"> <li class="nav-item"> <a class="nav-link nav-link-home active" href="#"> Home </a> </li><li class="nav-item"> <a class="nav-link nav-link-users" href="#"> Manage Users </a> </li><li class="nav-item"> <a class="nav-link sub-link" href="#"> Users </a> </li><li class="nav-item"> <a class="nav-link sub-link" href="#"> Groups </a> </li><li class="nav-item"> <a class="nav-link nav-link-courses" href="#"> Manage Courses </a> </li><li class="nav-item"> <a class="nav-link sub-link" href="#"> Courses </a> </li><li class="nav-item"> <a class="nav-link sub-link" href="#"> Learning Paths </a> </li><li class="nav-item"> <a class="nav-link nav-link-assign" href="#"> Assign Courses </a> </li><li class="nav-item"> <a class="nav-link nav-link-reports" href="#"> View Reports </a> </li><li class="nav-item"> <a class="nav-link nav-link-admin" href="#"> Admin Actions </a> </li><li class="nav-item"> <a class="nav-link sub-link" href="#"> Mass Import </a> </li><li class="nav-item"> <a class="nav-link sub-link" href="#"> View Archive </a> </li></ul> </div></nav> <main role="main" class="col-md-10 hcp-cip-main"> </main></div>'
+
+$(document).ready(function() {
+    $('.all-efront-content').before(bodyWrapperHtml);
+});
+
+$(document).ready(function() {
+    $('.all-efront-content').appendTo('.hcp-cip-main');
+});
+
+
+// OTHER JAVASCRIPT
+
+// Move Footer to top of Tables
+if( $('.sortedTableFooter').length ) {
+    var footer = $('.sortedTableFooter')
+    footer.each(function() {
+        var parent = $(this).parent();
+        $(this).insertBefore(parent);
+    });
+}
