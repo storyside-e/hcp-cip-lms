@@ -1110,6 +1110,45 @@ a.hcp-cip-top-bar-product:hover{
     text-transform: none;
 }
 
-
+.hcp-cip-main-body  {
+    height: calc(100vh - 59px);
+}
+.hcp-cip-main, .sidebar {
+  height: 100%;
+}
+body {
+  padding-bottom: 0 !important;
+}
+#ef-navbar .container ul.nav.navbar-nav > li.user-preferences > button {
+    margin-top: 0;
+    width: auto;
+    padding-right: 10px;
+}
+.nav .nav-item .nav-link {
+    padding: 6px 15px 6px 10px;
+}
+.nav .nav-item .nav-link span  {
+    margin-right: 7px;
+}
+.nav .nav-item .sub-link {
+    padding-left: 30px;
+}
+.hcp-cip-top-bar-logo {
+    width: 38px;
+    cursor: pointer;
+    padding: 0 4px;
+}
+#ef-navbar form.navbar-form #searchDiv {
+    background-color: #d8d6e0;
+    border-radius: 4px;
+    max-width: 350px;
+}
+#ef-navbar, #ef-navbar li a.dropdown-toggle[aria-expanded="true"] {
+    background-color: #e3e1e8;
+    border-color: #e3e1e8;
+}
+#ef-navbar .container ul.nav.navbar-nav > li > a:hover, #ef-navbar .container ul.nav.navbar-nav > li > a:active, #ef-navbar .container ul.nav.navbar-nav > li > button:hover, #ef-navbar .container ul.nav.navbar-nav > li > button:active {
+    color: #0e1f43;
+}
 
 /* DO NOT ADD/EDIT AFTER THIS LINE */

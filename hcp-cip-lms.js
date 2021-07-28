@@ -1,3 +1,32 @@
+/*Place your JS code here*/
+
+// Show ITK On the Go button? Default is off (false) if this variable does not exist. Set true to turn it on for the Learner.
+var show_itk_otg = 'true'; 
+
+// Hide catalog button for Learners if true. Default is false.
+var hide_catalog = 'true';
+
+function hideAssignments() {
+$("<style type='text/css'> #assignmentsTable{display:none;}.ef-block:before {content:'We apologize. This page is temporarily disabled due to routine site maintenance requirements. Please check back soon.';width: 100% !important;text-align: center;display: block;padding: 50px 70px;font-size: 24px;line-height: 1.2em;} </style>").appendTo("head");
+}
+function hideAssignmentsReport() {
+$("<style type='text/css'> #assignmentsTableReports{display:none;}.ef-block:before {content:'We apologize. This page is temporarily disabled due to routine site maintenance requirements. Please check back soon.';width: 100% !important;text-align: center;display: block;padding: 50px 70px;font-size: 24px;line-height: 1.2em;} </style>").appendTo("head");
+}
+
+$( document ).ready(function() {
+  if (window.location.href.indexOf("/InTheKnow") > -1 ) {
+    // hideAssignments();
+    $('.breadcrumb-x .breadcrumb .active a').text('Assign Courses');
+  }
+  if (window.location.href.indexOf("/op/assignments") > -1 ) {
+    // hideAssignmentsReport();
+  }
+  if (window.location.href.indexOf("/users/edit") > -1 ) {
+    // hide Tests box on user profile
+    jQuery('.col-md-3 .ef-preview-box-mini:eq(1)').parent().hide();
+  }
+});
+
 function createnav(thisusertype, thisuserid) {
     if (typeof new_nav_learner !== 'undefined') {
         // the variable is defined
@@ -357,7 +386,7 @@ function createnav(thisusertype, thisuserid) {
     }
 
     newnavbar = newnavbar + newnavbarend;
-    jQuery(newnavbar).insertBefore('.breadcrumb-x');
+   // jQuery(newnavbar).insertBefore('.breadcrumb-x');
 
 
 
@@ -365,18 +394,18 @@ function createnav(thisusertype, thisuserid) {
     // CIP below
     var bodyWrapperHtml = '<div class="sidebar-logo"><b>HCP</b> Training</div><div class="sidebar-sticky"><ul class="nav flex-column">'
     var bodyWrapperHtmlMiddle = '';
-    var bodyWrapperHtmlMiddlex = '<li class="nav-item"> <a class="nav-link nav-link-home active" href="#"> Home </a> </li><li class="nav-item"> <a class="nav-link nav-link-users" href="#"> Manage Users </a> </li><li class="nav-item"> <a class="nav-link sub-link" href="#"> Users </a> </li><li class="nav-item"> <a class="nav-link sub-link" href="#"> Groups </a> </li><li class="nav-item"> <a class="nav-link nav-link-courses" href="#"> Manage Courses </a> </li><li class="nav-item"> <a class="nav-link sub-link" href="#"> Courses </a> </li><li class="nav-item"> <a class="nav-link sub-link" href="#"> Learning Paths </a> </li><li class="nav-item"> <a class="nav-link nav-link-assign" href="#"> Assign Courses </a> </li><li class="nav-item"> <a class="nav-link nav-link-reports" href="#"> View Reports </a> </li><li class="nav-item"> <a class="nav-link nav-link-admin" href="#"> Admin Actions </a> </li><li class="nav-item"> <a class="nav-link sub-link" href="#"> Mass Import </a> </li><li class="nav-item"> <a class="nav-link sub-link" href="#"> View Archive </a> </li>';
+    var bodyWrapperHtmlMiddlex = '<li class="nav-item"> <a class="nav-link nav-link-home" href="#"> Home </a> </li><li class="nav-item"> <a class="nav-link nav-link-users" href="#"> Manage Users </a> </li><li class="nav-item"> <a class="nav-link sub-link" href="#"> Users </a> </li><li class="nav-item"> <a class="nav-link sub-link" href="#"> Groups </a> </li><li class="nav-item"> <a class="nav-link nav-link-courses" href="#"> Manage Courses </a> </li><li class="nav-item"> <a class="nav-link sub-link" href="#"> Courses </a> </li><li class="nav-item"> <a class="nav-link sub-link" href="#"> Learning Paths </a> </li><li class="nav-item"> <a class="nav-link nav-link-assign" href="#"> Assign Courses </a> </li><li class="nav-item"> <a class="nav-link nav-link-reports" href="#"> View Reports </a> </li><li class="nav-item"> <a class="nav-link nav-link-admin" href="#"> Admin Actions </a> </li><li class="nav-item"> <a class="nav-link sub-link" href="#"> Mass Import </a> </li><li class="nav-item"> <a class="nav-link sub-link" href="#"> View Archive </a> </li>';
     for (var i = 0, l = thisnav.items.length; i < l; i++) {
         var obj = thisnav.items[i];
         if (obj.dropdown == 'yes') {
-            var bodyWrapperHtmlItem = '<li class="nav-item"> <a href="' + obj.link + '" class="nav-link nav-link-home active"><span class="' + obj.glyph + '" aria-hidden="true"></span>' + obj.name + '</a></li>';
+            var bodyWrapperHtmlItem = '<li class="nav-item"> <a href="' + obj.link + '" class="nav-link"><span class="' + obj.glyph + '" aria-hidden="true" ></span>' + obj.name + '</a></li>';
             for (var j = 0, m = obj.subitems.length; j < m; j++) {
                 var objsub = obj.subitems[j];
-                var bodyWrapperHtmlSubItem = '<li class="nav-item"><a href="' + objsub.link + '" class="nav-link sub-link"><span class="' + objsub.glyph + '" aria-hidden="true"></span>' + objsub.name + '</a></li>';
+                var bodyWrapperHtmlSubItem = '<li class="nav-item"><a href="' + objsub.link + '" class="nav-link sub-link"><span class="' + objsub.glyph + '" aria-hidden="true"  style="display:none;"></span>' + objsub.name + '</a></li>';
                 bodyWrapperHtmlItem = bodyWrapperHtmlItem + bodyWrapperHtmlSubItem;
             }
         } else {
-            bodyWrapperHtmlItem = '<li><a href="' + obj.link + '"><span class="' + obj.glyph + '" aria-hidden="true"></span>' + obj.name + '</a></li>';
+            bodyWrapperHtmlItem = '<li class="nav-item"><a href="' + obj.link + '" class="nav-link"><span class="' + obj.glyph + '" aria-hidden="true"></span>' + obj.name + '</a></li>';
         }
         bodyWrapperHtmlMiddle = bodyWrapperHtmlMiddle + bodyWrapperHtmlItem;
     }
@@ -728,9 +757,9 @@ function removeolddates() {
 
 function cipWrapper() {
     $('body').wrapInner('<div class="all-efront-content"></div>');
-    var topBarHtml = '<div class="hcp-cip-top-bar"><div class="hcp-cip-top-bar-logo"><a href="/"><img src="https://www.sageway.com/wp-content/uploads/2021/06/HCP_mark_secondary.svg" alt="HCP"></a></div><div class="hcp-cip-top-bar-products"><a href="/" class="hcp-cip-top-bar-product hcp-cip-experience">Experience</a><a href="/" class="hcp-cip-top-bar-product hcp-cip-training">Training</a><a href="/" class="hcp-cip-top-bar-product hcp-cip-reviews">Reviews</a><a href="/" class="hcp-cip-top-bar-product hcp-cip-benchmarking">Benchmarking</a></div><div class="hcp-cip-top-bar-account"><img src="https://www.sageway.com/wp-content/uploads/2021/06/kire-headshot.png" alt="User"></div></div>';
+    var topBarHtml = '<div class="hcp-cip-top-bar"><div class="hcp-cip-top-bar-logo"><a href="/"><img src="https://www.sageway.com/wp-content/uploads/2021/06/HCP_mark_secondary.svg" alt="HCP"></a></div><div class="hcp-cip-top-bar-products"><a href="/" class="hcp-cip-top-bar-product hcp-cip-experience">Experience</a><a href="/" class="hcp-cip-top-bar-product hcp-cip-training">Training</a><a href="/" class="hcp-cip-top-bar-product hcp-cip-reviews">Reviews</a><a href="/" class="hcp-cip-top-bar-product hcp-cip-benchmarking">Benchmarking</a><div class="dropdown hcp-cip-product-dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">...</a> <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"> <a class="dropdown-item" href="#" target="_blank">Experience</a> <a class="dropdown-item" href="#" target="_blank">Reviews</a> <a class="dropdown-item" href="#" target="_blank">Benchmarking</a> </div></div></div><div class="hcp-cip-top-bar-account"><img src="https://www.sageway.com/wp-content/uploads/2021/06/kire-headshot.png" alt="User"></div></div>';
     $('body').prepend(topBarHtml);
-    var bodyWrapperHtml = '<div class="row"> <nav class="col-md-2 sidebar"></nav> <main role="main" class="col-md-10 hcp-cip-main"> </main></div>';
+    var bodyWrapperHtml = '<div class="row hcp-cip-main-body"> <nav class="col-md-2 sidebar"></nav> <main role="main" class="col-md-10 hcp-cip-main"> </main></div>';
     $('.all-efront-content').before(bodyWrapperHtml);
     $('.all-efront-content').appendTo('.hcp-cip-main');
 }
