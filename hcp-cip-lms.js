@@ -27,6 +27,8 @@ $( document ).ready(function() {
   }
 });
 
+/*Place your JS code here*/
+
 function createnav(thisusertype, thisuserid) {
     if (typeof new_nav_learner !== 'undefined') {
         // the variable is defined
@@ -410,8 +412,10 @@ function createnav(thisusertype, thisuserid) {
         bodyWrapperHtmlMiddle = bodyWrapperHtmlMiddle + bodyWrapperHtmlItem;
     }
     var bodyWrapperHtmlEnd = '</ul></div>';
-    $('.sidebar').html(bodyWrapperHtml + bodyWrapperHtmlMiddle + bodyWrapperHtmlEnd); 
-
+    if (window.location.href.indexOf("popup") > -1) {
+    } else {
+   		$('.sidebar').html(bodyWrapperHtml + bodyWrapperHtmlMiddle + bodyWrapperHtmlEnd); 
+    }
 
 }
 
@@ -446,7 +450,7 @@ function insertitkotg(usertype) {
             }
         }
     }
-    if (usertype == 'Training Manager' || usertype == 'Administrator') {
+    if (usertype == 'Training Manager' || usertype == 'Administrator' || usertype == 'Branch Administrator') {
         if (typeof show_itk_otg !== 'undefined') {
             // the variable is defined
             if (show_itk_otg == 'false') {} else {
@@ -757,7 +761,7 @@ function removeolddates() {
 
 function cipWrapper() {
     $('body').wrapInner('<div class="all-efront-content"></div>');
-    var topBarHtml = '<div class="hcp-cip-top-bar"><div class="hcp-cip-top-bar-logo"><a href="/"><img src="https://www.sageway.com/wp-content/uploads/2021/06/HCP_mark_secondary.svg" alt="HCP"></a></div><div class="hcp-cip-top-bar-products"><a href="/" class="hcp-cip-top-bar-product hcp-cip-experience">Experience</a><a href="/" class="hcp-cip-top-bar-product hcp-cip-training">Training</a><a href="/" class="hcp-cip-top-bar-product hcp-cip-reviews">Reviews</a><a href="/" class="hcp-cip-top-bar-product hcp-cip-benchmarking">Benchmarking</a><div class="dropdown hcp-cip-product-dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">...</a> <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"> <a class="dropdown-item" href="#" target="_blank">Experience</a> <a class="dropdown-item" href="#" target="_blank">Reviews</a> <a class="dropdown-item" href="#" target="_blank">Benchmarking</a> </div></div></div><div class="hcp-cip-top-bar-account"><img src="https://www.sageway.com/wp-content/uploads/2021/06/kire-headshot.png" alt="User"></div></div>';
+    var topBarHtml = '<div class="hcp-cip-top-bar"><div class="hcp-cip-top-bar-logo"><a href="/"><img src="https://www.sageway.com/wp-content/uploads/2021/06/HCP_mark_secondary.svg" alt="HCP"></a></div><div class="hcp-cip-top-bar-products"><a href="http://hcp047.homecarepulse.com:3000/cip/experience" target="_blank" class="hcp-cip-top-bar-product hcp-cip-experience">Experience</a><a href="/" class="hcp-cip-top-bar-product hcp-cip-training">Training</a><a href="http://hcp047.homecarepulse.com:3000/cip/reviews" target="_blank" class="hcp-cip-top-bar-product hcp-cip-reviews">Reviews</a><a href="/" class="hcp-cip-top-bar-product hcp-cip-benchmarking" style="display:none;">Benchmarking</a><div class="dropdown hcp-cip-product-dropdown"> <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">...</a> <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"> <a class="dropdown-item" href="#" target="_blank">Experience</a> <a class="dropdown-item" href="#" target="_blank">Reviews</a> <a class="dropdown-item" href="#" target="_blank">Benchmarking</a> </div></div></div><div class="hcp-cip-top-bar-account"><img src="https://www.sageway.com/wp-content/uploads/2021/06/kire-headshot.png" alt="User"></div></div>';
     $('body').prepend(topBarHtml);
     var bodyWrapperHtml = '<div class="row hcp-cip-main-body"> <nav class="col-md-2 sidebar"></nav> <main role="main" class="col-md-10 hcp-cip-main"> </main></div>';
     $('.all-efront-content').before(bodyWrapperHtml);
@@ -792,7 +796,10 @@ $(document).ready(function () {
     }
     addcustombadges();
     removeolddates();
-    cipWrapper();
+    if (window.location.href.indexOf("popup") > -1) {
+    } else {
+    	cipWrapper();
+    }
     createnav(user.type, user.id);
 });
 

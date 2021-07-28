@@ -33,13 +33,13 @@
     --ef-block-padding: 0px;
     --inner-ef-block-padding: 20px;
     
-    --button-bg-color: #88b11e;
-    --button-bg-color-hover: #96c421; 
-    --button-bg-color-active: #85ae1e;    
+    --button-bg-color: #d07059;
+    --button-bg-color-hover: #d07059; 
+    --button-bg-color-active: #d07059;    
     --button-font-color: #ffffff; 
     --button-font-color-hover: #ffffff;    
     --button-font-color-active: #ffffff;  
-    --button-border: 0px solid #88b11e;
+    --button-border: 0px solid #d07059;
     
     --button-bg-color-invert: #f4f5f8;
     --button-bg-color-hover-invert: #eff1f5; 
@@ -52,7 +52,7 @@
     --tab-slider-underline-color: ;
     --tab-slider-underline-height: ;
     
-    --text-link-color: #88b11e;   
+    --text-link-color: #d07059;   
 }
 /*
 @font-face {
@@ -1111,10 +1111,11 @@ a.hcp-cip-top-bar-product:hover{
 }
 
 .hcp-cip-main-body  {
-    height: calc(100vh - 59px);
+    min-height: calc(100vh - 59px);
 }
 .hcp-cip-main, .sidebar {
   height: 100%;
+  min-height: calc(100vh - 59px);
 }
 body {
   padding-bottom: 0 !important;
@@ -1129,6 +1130,7 @@ body {
 }
 .nav .nav-item .nav-link span  {
     margin-right: 7px;
+      width: 13px;
 }
 .nav .nav-item .sub-link {
     padding-left: 30px;
