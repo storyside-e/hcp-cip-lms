@@ -1,5 +1,3 @@
-/*Place your JS code here*/
-
 function createnav(thisusertype, thisuserid) {
     if (typeof new_nav_learner !== 'undefined') {
         // the variable is defined
@@ -732,6 +730,8 @@ function cipWrapper() {
     $('body').wrapInner('<div class="all-efront-content"></div>');
     var topBarHtml = '<div class="hcp-cip-top-bar"><div class="hcp-cip-top-bar-logo"><a href="/"><img src="https://www.sageway.com/wp-content/uploads/2021/06/HCP_mark_secondary.svg" alt="HCP"></a></div><div class="hcp-cip-top-bar-products"><a href="/" class="hcp-cip-top-bar-product hcp-cip-experience">Experience</a><a href="/" class="hcp-cip-top-bar-product hcp-cip-training">Training</a><a href="/" class="hcp-cip-top-bar-product hcp-cip-reviews">Reviews</a><a href="/" class="hcp-cip-top-bar-product hcp-cip-benchmarking">Benchmarking</a></div><div class="hcp-cip-top-bar-account"><img src="https://www.sageway.com/wp-content/uploads/2021/06/kire-headshot.png" alt="User"></div></div>';
     $('body').prepend(topBarHtml);
+    var bodyWrapperHtml = '<div class="row"> <nav class="col-md-2 sidebar"></nav> <main role="main" class="col-md-10 hcp-cip-main"> </main></div>';
+    $('.all-efront-content').before(bodyWrapperHtml);
     $('.all-efront-content').appendTo('.hcp-cip-main');
 }
 
@@ -739,7 +739,6 @@ function cipWrapper() {
 $(document).ready(function () {
     var user = getuser();
     console.log(user.type);
-    createnav(user.type, user.id);
     insertitkotg(user.type);
     jQuery('.alphatar.navi').after('<span class="alphatar-add">' + ef_current_user.name + '</span>');
     itkmovesearchrow();
@@ -765,6 +764,7 @@ $(document).ready(function () {
     addcustombadges();
     removeolddates();
     cipWrapper();
+    createnav(user.type, user.id);
 });
 
 $(document).ajaxComplete(function (event, xhr, settings) {
